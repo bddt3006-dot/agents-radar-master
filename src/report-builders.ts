@@ -142,7 +142,7 @@ export function buildOpenclawReportContent(
   const meta =
     lang === "en"
       ? `> Issues: ${issues.length} | PRs: ${prs.length} | Projects covered: ${1 + openclawPeers.length} | Generated: ${utcStr} UTC\n\n`
-      : `> Issues: ${issues.length} | PRs: ${prs.length} | 覆盖项目: ${1 + openclawPeers.length} 个 | 生成时间: ${utcStr} UTC\n\n`;
+      : `> Issues: ${issues.length} | PRs: ${prs.length} | Số dự án: ${1 + openclawPeers.length} | Thời gian tạo: ${utcStr} UTC\n\n`;
 
   return (
     title +

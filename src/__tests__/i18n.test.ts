@@ -71,19 +71,19 @@ describe("issue title functions", () => {
   });
 
   it("INFRA_ISSUE_TITLE produces zh and en titles", () => {
-    expect(INFRA_ISSUE_TITLE("2026-03-12", "zh")).toContain("AI 基础设施日报");
+    expect(INFRA_ISSUE_TITLE("2026-03-12", "zh")).toContain("Bản tin Hạ tầng AI");
     expect(INFRA_ISSUE_TITLE("2026-03-12", "zh")).toContain("2026-03-12");
     expect(INFRA_ISSUE_TITLE("2026-03-12", "en")).toContain("AI Infrastructure Digest");
   });
 
   it("WEB_REPORT.issueTitle includes first crawl flag", () => {
-    expect(WEB_REPORT.issueTitle("2026-03-12", true, "zh")).toContain("首次全量");
-    expect(WEB_REPORT.issueTitle("2026-03-12", false, "zh")).not.toContain("首次全量");
+    expect(WEB_REPORT.issueTitle("2026-03-12", true, "zh")).toContain("Lần đầu");
+    expect(WEB_REPORT.issueTitle("2026-03-12", false, "zh")).not.toContain("Lần đầu");
     expect(WEB_REPORT.issueTitle("2026-03-12", true, "en")).toContain("First Crawl");
   });
 
   it("TRENDING_REPORT.issueTitle produces zh and en", () => {
-    expect(TRENDING_REPORT.issueTitle("2026-03-12", "zh")).toContain("开源趋势");
+    expect(TRENDING_REPORT.issueTitle("2026-03-12", "zh")).toContain("Xu hướng");
     expect(TRENDING_REPORT.issueTitle("2026-03-12", "en")).toContain("Open Source Trends");
   });
 
@@ -101,7 +101,7 @@ describe("dynamic content helpers", () => {
   it("CLI_REPORT.meta produces zh and en metadata", () => {
     const zh = CLI_REPORT.meta("12:00", 5, "zh");
     expect(zh).toContain("12:00");
-    expect(zh).toContain("5 个");
+    expect(zh).toContain("Số công cụ: 5");
 
     const en = CLI_REPORT.meta("12:00", 5, "en");
     expect(en).toContain("12:00");
@@ -109,7 +109,7 @@ describe("dynamic content helpers", () => {
   });
 
   it("WEB_REPORT.newContent formats count", () => {
-    expect(WEB_REPORT.newContent(10, "zh")).toContain("10 篇");
+    expect(WEB_REPORT.newContent(10, "zh")).toContain("10 bài");
     expect(WEB_REPORT.newContent(10, "en")).toContain("10 articles");
   });
 
@@ -141,7 +141,7 @@ describe("ISSUE_LABELS", () => {
 
 describe("REPORT_LABELS", () => {
   it("covers the infra report in both languages", () => {
-    expect(REPORT_LABELS["ai-infra"]).toBe("AI 基础设施日报");
+    expect(REPORT_LABELS["ai-infra"]).toBe("Bản tin Hạ tầng AI");
     expect(REPORT_LABELS["ai-infra-en"]).toBe("AI Infrastructure Digest");
   });
 });

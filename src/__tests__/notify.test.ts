@@ -21,7 +21,7 @@ describe("buildMessage", () => {
     expect(msg).toContain("📡");
     // zh links
     expect(msg).toContain(`${BASE_URL}/#2026-03-09/ai-cli`);
-    expect(msg).toContain("AI CLI 工具");
+    expect(msg).toContain("AI CLI Tools");
     // en links
     expect(msg).toContain(`${BASE_URL}/#2026-03-09/ai-cli-en`);
     expect(msg).toContain("AI CLI Tools");
@@ -29,7 +29,7 @@ describe("buildMessage", () => {
 
   it("renders zh-only reports without en link", () => {
     const msg = buildMessage("2026-03-09", ["ai-hn"], BASE_URL);
-    expect(msg).toContain("HN 社区动态");
+    expect(msg).toContain("Cộng đồng HN");
     expect(msg).not.toContain("HN Community");
   });
 
@@ -99,13 +99,13 @@ describe("buildMessage", () => {
 
   it("works without highlights (null)", () => {
     const msg = buildMessage("2026-03-09", ["ai-cli", "ai-cli-en"], BASE_URL, null);
-    expect(msg).toContain("AI CLI 工具");
+    expect(msg).toContain("AI CLI Tools");
     expect(msg).not.toContain("◦");
   });
 
   it("works without highlights (undefined)", () => {
     const msg = buildMessage("2026-03-09", ["ai-cli", "ai-cli-en"], BASE_URL);
-    expect(msg).toContain("AI CLI 工具");
+    expect(msg).toContain("AI CLI Tools");
     expect(msg).not.toContain("◦");
   });
 });

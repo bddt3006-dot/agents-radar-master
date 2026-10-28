@@ -103,7 +103,9 @@ export const ARXIV_REPORT = {
 export const HF_REPORT = {
   title: t("Bản tin tuần mô hình nổi bật Hugging Face", "Hugging Face Trending Models Weekly"),
   issueTitle: (dateStr: string, lang: Lang) =>
-    lang === "en" ? `🤗 Hugging Face Trending Models ${dateStr}` : `🤗 Hugging Face Trending Models ${dateStr}`,
+    lang === "en"
+      ? `🤗 Hugging Face Trending Models ${dateStr}`
+      : `🤗 Hugging Face Trending Models ${dateStr}`,
 } as const;
 
 export const COMMUNITY_REPORT = {

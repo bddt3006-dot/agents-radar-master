@@ -254,11 +254,11 @@ describe("topDiscussions", () => {
 // ---------------------------------------------------------------------------
 
 describe("buildTranslationPrompt", () => {
-  it("embeds the source text and asks for Chinese output only", () => {
+  it("embeds the source text and asks for Vietnamese output only", () => {
     const p = buildTranslationPrompt("## Releases\n\n- v1.2.3 shipped");
     expect(p).toContain("## Releases");
     expect(p).toContain("v1.2.3 shipped");
-    expect(p).toContain("Simplified Chinese");
+    expect(p).toContain("Vietnamese");
     expect(p).toContain("Output ONLY the translation");
   });
 

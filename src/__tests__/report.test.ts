@@ -140,7 +140,7 @@ describe("autoGenFooter", () => {
     const result = autoGenFooter("zh");
     expect(result).toContain("agents-radar");
     expect(result).toContain("github.com/user/repo");
-    expect(result).toContain("自动生成");
+    expect(result).toContain("tự động");
   });
 
   it("returns English footer when lang is en", () => {
@@ -482,7 +482,7 @@ describe("translateToZh", () => {
     expect(out).toBe("中文报告");
     expect(mockCall).toHaveBeenCalledTimes(1);
     const prompt = mockCall.mock.calls[0]![0];
-    expect(prompt).toContain("Simplified Chinese");
+    expect(prompt).toContain("Vietnamese");
     expect(prompt).toContain("# English report");
   });
 

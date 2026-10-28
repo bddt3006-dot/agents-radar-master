@@ -44,11 +44,11 @@ describe("buildCliReportContent", () => {
       "zh",
     );
 
-    expect(result).toContain("# AI CLI 工具社区动态日报 2026-03-09");
-    expect(result).toContain("覆盖工具: 2 个");
+    expect(result).toContain("# Bản tin cộng đồng AI CLI Tools 2026-03-09");
+    expect(result).toContain("Số công cụ: 2");
     expect(result).toContain("[Claude Code](https://github.com/anthropics/claude-code)");
     expect(result).toContain("[Claude Code Skills](https://github.com/anthropics/skills)");
-    expect(result).toContain("横向对比");
+    expect(result).toContain("So sánh đối chiếu các công cụ");
     expect(result).toContain("Comparison content");
     expect(result).toContain("Skills summary");
     expect(result).toContain("footer");
@@ -125,14 +125,14 @@ describe("buildOpenclawReportContent", () => {
       "zh",
     );
 
-    expect(result).toContain("# OpenClaw 生态日报 2026-03-09");
+    expect(result).toContain("# Bản tin hệ sinh thái OpenClaw 2026-03-09");
     expect(result).toContain("Issues: 1");
-    expect(result).toContain("覆盖项目: 2 个");
+    expect(result).toContain("Số dự án: 2");
     expect(result).toContain("[OpenClaw](https://github.com/openclaw/openclaw)");
     expect(result).toContain("[Peer1](https://github.com/org/peer1)");
-    expect(result).toContain("OpenClaw 项目深度报告");
-    expect(result).toContain("横向生态对比");
-    expect(result).toContain("同赛道项目详细报告");
+    expect(result).toContain("Báo cáo chuyên sâu dự án OpenClaw");
+    expect(result).toContain("So sánh đối chiếu hệ sinh thái");
+    expect(result).toContain("Báo cáo chi tiết các dự án tương đương");
     expect(result).toContain("footer");
   });
 
@@ -175,14 +175,14 @@ describe("buildInfraReportContent", () => {
       "zh",
     );
 
-    expect(result).toContain("# AI 基础设施日报 2026-03-09");
-    expect(result).toContain("覆盖项目: 2 个");
+    expect(result).toContain("# Bản tin Hạ tầng AI (Infrastructure) 2026-03-09");
+    expect(result).toContain("Số dự án: 2");
     expect(result).toContain("[vLLM](https://github.com/vllm-project/vllm)");
     expect(result).toContain("[Ollama](https://github.com/ollama/ollama)");
-    expect(result).toContain("横向对比");
+    expect(result).toContain("So sánh đối chiếu hạ tầng");
     expect(result).toContain("Comparison content");
     expect(result).toContain("vLLM 摘要");
-    expect(result).toContain("各项目详细报告");
+    expect(result).toContain("Báo cáo chi tiết từng dự án");
     expect(result).toContain("footer");
   });
 

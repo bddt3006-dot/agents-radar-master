@@ -28,7 +28,7 @@ function escapeHtml(s: string): string {
 
 async function sendTelegram(text: string): Promise<void> {
   const BOT_TOKEN = process.env["TELEGRAM_BOT_TOKEN"] ?? "";
-  const CHAT_ID = process.env["TELEGRAM_CHAT_ID"] || "@agents_radar";
+  const CHAT_ID = process.env["TELEGRAM_CHAT_ID"] ?? "";
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
   const res = await fetch(url, {
     method: "POST",
@@ -89,8 +89,9 @@ export function buildMessage(
 
 async function main(): Promise<void> {
   const BOT_TOKEN = process.env["TELEGRAM_BOT_TOKEN"] ?? "";
-  if (!BOT_TOKEN) {
-    console.log("[notify] TELEGRAM_BOT_TOKEN not set — skipping.");
+  const CHAT_ID = process.env["TELEGRAM_CHAT_ID"] ?? "";
+  if (!BOT_TOKEN || !CHAT_ID) {
+    console.log("[notify] TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set — skipping.");
     return;
   }
 

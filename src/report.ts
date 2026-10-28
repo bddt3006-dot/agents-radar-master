@@ -306,8 +306,8 @@ function repairJson(s: string): string {
 // ---------------------------------------------------------------------------
 
 export function saveFile(content: string, ...segments: string[]): string {
-  const filepath = path.join("digests", ...segments);
-  fs.mkdirSync(path.dirname(filepath), { recursive: true });
+  const filepath = path.posix.join("digests", ...segments);
+  fs.mkdirSync(path.posix.dirname(filepath), { recursive: true });
   fs.writeFileSync(filepath, content, "utf-8");
   return filepath;
 }
@@ -315,5 +315,5 @@ export function saveFile(content: string, ...segments: string[]): string {
 export function autoGenFooter(lang: Lang = "zh"): string {
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
   if (!digestRepo) return "";
-  return `\n\n---\n*${FOOTER.autoGen[lang]} [agents-radar](https://github.com/${digestRepo})${lang === "en" ? "." : " 自动生成。"}*`;
+  return `\n\n---\n*${FOOTER.autoGen[lang]} [agents-radar](https://github.com/${digestRepo})${lang === "en" ? "." : " (tự động tạo)."}*`;
 }

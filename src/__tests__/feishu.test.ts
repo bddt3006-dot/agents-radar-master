@@ -24,13 +24,13 @@ describe("buildFeishuMessage", () => {
     expect(msg).toContain("agents-radar");
     expect(msg).toContain("2026-03-09");
     expect(msg).toContain("📡");
-    expect(msg).toContain(`[AI CLI 工具](${BASE_URL}/#2026-03-09/ai-cli)`);
+    expect(msg).toContain(`[AI CLI Tools](${BASE_URL}/#2026-03-09/ai-cli)`);
     expect(msg).toContain(`[AI CLI Tools](${BASE_URL}/#2026-03-09/ai-cli-en)`);
   });
 
   it("renders zh-only reports without en link", () => {
     const msg = buildFeishuMessage("2026-03-09", ["ai-hn"], BASE_URL);
-    expect(msg).toContain("HN 社区动态");
+    expect(msg).toContain("Cộng đồng HN");
     expect(msg).not.toContain("HN Community");
   });
 
@@ -46,7 +46,7 @@ describe("buildFeishuMessage", () => {
     expect(msg).not.toContain("<a href=");
     expect(msg).not.toContain("<b>");
     expect(msg).toContain("**agents-radar");
-    expect(msg).toContain(`[AI CLI 工具](`);
+    expect(msg).toContain(`[AI CLI Tools](`);
   });
 
   it("includes highlights when provided", () => {
@@ -72,7 +72,7 @@ describe("buildFeishuMessage", () => {
 
   it("works without highlights", () => {
     const msg = buildFeishuMessage("2026-03-09", ["ai-cli", "ai-cli-en"], BASE_URL, null);
-    expect(msg).toContain("AI CLI 工具");
+    expect(msg).toContain("AI CLI Tools");
     expect(msg).not.toContain("◦");
   });
 });
