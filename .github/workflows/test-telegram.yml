@@ -37,6 +37,11 @@ jobs:
           else
             echo "TELEGRAM_CHAT_ID is set."
           fi
+          if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+            echo "::warning::Secret OPENAI_API_KEY is not set! Daily Agents Radar will fail without it."
+          else
+            echo "OPENAI_API_KEY is set."
+          fi
 
       - name: Send Telegram notification
         env:
