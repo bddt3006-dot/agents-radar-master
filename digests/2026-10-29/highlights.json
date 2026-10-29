@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "Claude Code thúc đẩy kiến trúc tác tử có khả năng mở rộng",
+      "OpenAI Codex phát hành rust-v0.166.0-alpha.6",
+      "Gemini CLI tích hợp quy trình làm việc MCP nâng cao",
+      "GitHub Copilot CLI giải quyết các giới hạn hạn mức người dùng nghiêm trọng",
+      "OpenCode cải thiện độ ổn định WSL2 đa nền tảng",
+      "Qwen Code tối ưu hóa các môi trường chạy hỗ trợ daemon"
+    ],
+    "ai-agents": [
+      "OpenClaw giải quyết tình trạng tranh chấp cơ sở dữ liệu trạng thái SQLite nghiêm trọng",
+      "Hermes Agent khắc phục rò rỉ bộ nhớ tiến trình nền",
+      "IronClaw giải quyết các điểm nghẽn bộ bao dịch vụ hệ điều hành quan trọng",
+      "QwenPaw xử lý các lỗi chuẩn hóa unicode",
+      "ZeroClaw tăng tốc vòng đời cron của tác tử tự động",
+      "Công cụ chẩn độ OpenClaw nâng cao độ tin cậy khi di chuyển không giao diện"
+    ],
+    "ai-infra": [
+      "vllm thêm hỗ trợ cho deepseek-v4.1 và minimax-m3.1",
+      "sglang tối ưu hóa gia tốc rdna trên phần cứng tiêu dùng của amd",
+      "llama.cpp xử lý rò rỉ đồ thị cuda có chi phí tài nguyên cao",
+      "ollama cung cấp năng lượng cho các đường ống suy luận trọng số cục bộ",
+      "litellm tăng cường các rào cản bảo vệ cho cổng doanh nghiệp",
+      "unsloth tăng tốc tinh chỉnh mô hình bộ nhớ thấp"
+    ],
+    "ai-trending": [
+      "ollama bứt phá với 185 nghìn sao cho môi trường chạy cục bộ",
+      "langchain cung cấp năng lượng cho việc điều phối tác tử doanh nghiệp",
+      "transformers đạt 168 nghìn sao cho các định nghĩa học máy",
+      "rig mang lại các thư viện LLM bằng ngôn ngữ Rust hiệu năng cao",
+      "copilotkit mở rộng quy mô tích hợp ứng dụng tương tác",
+      "huggingface thúc đẩy công cụ mô hình nguồn mở"
+    ],
+    "ai-web": [
+      "anthropic mở rộng AI phục vụ khoa học với 20 nhóm",
+      "openai làm sâu sắc thêm mối liên kết doanh nghiệp với servicenow",
+      "anthropic giới thiệu quy trình phát triển thuốc toàn diện",
+      "anthropic khám phá các hệ thống enzyme nghệ thuật mới lạ",
+      "anthropic mô hình hóa việc thực thi chuỗi khai thác lỗ hổng trên chrome",
+      "anthropic phân tích các tác tử lập trình trong môi trường học thuật"
+    ],
+    "ai-hn": [
+      "google ra mắt mô hình chủ lực gemini 4 carbon",
+      "openai ra mắt kiến trúc mô hình gpt-6.1 terra",
+      "openai công bố ba đột phá khoa học lớn",
+      "microzig áp dụng quy tắc ứng xử nghiêm ngặt không dùng LLM",
+      "tin tặc tranh luận về đạo đức dữ liệu huấn luyện của anthropic",
+      "lập trình viên phản đối các ứng dụng AI tiêu dùng bị ép buộc"
+    ],
+    "ai-arxiv": [
+      "muongs giới thiệu kiểm soát chuẩn trọng số nới lỏng",
+      "msla đề xuất chú ý tuyến tính đa trạng thái",
+      "các cổng chú ý đã học chặn lệnh tiêm nhiễm",
+      "nghiên cứu mới hướng tới việc triển khai robot vật lý",
+      "tiền xử lý ODE động học thu hẹp khoảng cách giữa học máy và toán học",
+      "các bài báo trên arxiv giải quyết phản hồi tác tử đa lượt"
+    ],
+    "ai-community": [
+      "dev to nổi bật với 80 phần trăm sự chuyển dịch kỹ thuật",
+      "AI đẩy khoa học máy tính hướng tới kiến trúc",
+      "lập trình viên chia sẻ chiến lược cắt giảm token đầu vào",
+      "lobste rs tranh luận về việc phát hiện lỗ hổng AI",
+      "cộng đồng công nghệ giải quyết vấn đề lưu persistence bộ nhớ tác tử",
+      "kỹ sư định nghĩa lại độ tin cậy phần mềm cho các tác tử"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "Claude Code drives extensible agent architectures",
+      "OpenAI Codex rolls out rust-v0.166.0-alpha.6",
+      "Gemini CLI gains advanced MCP workflow integrations",
+      "GitHub Copilot CLI tackles severe user quota limits",
+      "OpenCode improves cross-platform WSL2 stability",
+      "Qwen Code optimizes daemon-backed runtimes"
+    ],
+    "ai-agents": [
+      "OpenClaw battles severe SQLite state database contention",
+      "Hermes Agent fixes background worker memory leaks",
+      "IronClaw resolves critical OS service wrapper blocks",
+      "QwenPaw targets unicode canonicalization bugs",
+      "ZeroClaw accelerates autonomous agent cron lifecycles",
+      "OpenClaw doctor enhances headless migration reliability"
+    ],
+    "ai-infra": [
+      "vllm adds deepseek-v4.1 and minimax-m3.1 support",
+      "sglang optimizes amd consumer rdna acceleration",
+      "llama.cpp tackles high-overhead cuda graph leaks",
+      "ollama powers local weights inference pipelines",
+      "litellm hardens enterprise gateway guardrails",
+      "unsloth accelerates low-memory model fine-tuning"
+    ],
+    "ai-trending": [
+      "ollama surges with 185k stars for local runtimes",
+      "langchain powers enterprise agent orchestration",
+      "transformers hits 168k stars for ml definitions",
+      "rig brings high performance rust llm libraries",
+      "copilotkit scales interactive app integrations",
+      "huggingface drives open source model tooling"
+    ],
+    "ai-web": [
+      "anthropic expands ai for science with 20 groups",
+      "openai deepens enterprise tie-in with servicenow",
+      "anthropic showcases end-to-end drug development",
+      "anthropic discovers novel art enzyme systems",
+      "anthropic models execute chrome exploit chains",
+      "anthropic analyzes coding agents in academia"
+    ],
+    "ai-hn": [
+      "google drops gemini 4 carbon flagship model",
+      "openai launches gpt-6.1 terra model architecture",
+      "openai unveils three major scientific breakthroughs",
+      "microzig adopts strict no-llm code of conduct",
+      "hackers debate anthropic training data ethics",
+      "developers push back on forced ai consumer apps"
+    ],
+    "ai-arxiv": [
+      "muongs introduces relaxed weight norm control",
+      "msla proposes multi-state linear attention",
+      "learned attention gates block prompt injections",
+      "new research targets physical robotic deployment",
+      "kinetic ode preprocessing bridges ml and math",
+      "arxiv papers tackle multi-turn agent feedback"
+    ],
+    "ai-community": [
+      "dev to highlights 80 percent engineering shift",
+      "ai pushes computer science toward architecture",
+      "developers share strategies to cut input tokens",
+      "lobste rs debates ai vulnerability discovery",
+      "tech community tackles agent memory persistence",
+      "engineers redefine software reliability for agents"
+    ]
+  }
+}
