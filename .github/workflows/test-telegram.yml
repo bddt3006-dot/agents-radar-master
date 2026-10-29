@@ -1,0 +1,46 @@
+name: Test Telegram Notification
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test-telegram.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check Secrets
+        run: |
+          if [ -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
+            echo "::error::Secret TELEGRAM_BOT_TOKEN is not set in GitHub Secrets!"
+          else
+            echo "TELEGRAM_BOT_TOKEN is set."
+          fi
+          if [ -z "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
+            echo "::error::Secret TELEGRAM_CHAT_ID is not set in GitHub Secrets!"
+          else
+            echo "TELEGRAM_CHAT_ID is set."
+          fi
+
+      - name: Send Telegram notification
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAGES_URL: ${{ secrets.PAGES_URL || 'https://bddt3006-dot.github.io/agents-radar-master' }}
+        run: pnpm notify
