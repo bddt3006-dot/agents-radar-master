@@ -84,7 +84,7 @@ jobs:
           LLM_PROVIDER: ${{ secrets.LLM_PROVIDER || 'openai' }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/openai/' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || 'gemini-3.5-flash' }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || 'gemini-3.5-flash-lite' }}
           DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
           PRODUCTHUNT_TOKEN: ${{ secrets.PRODUCTHUNT_TOKEN }}
           DIGEST_REPO: ${{ github.repository }}

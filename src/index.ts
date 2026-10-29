@@ -410,9 +410,10 @@ async function main(): Promise<void> {
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
 
   const providerName = process.env["LLM_PROVIDER"] ?? "anthropic";
+  const modelName = process.env["OPENAI_MODEL"] ?? process.env["ANTHROPIC_MODEL"] ?? "default";
   const isHfWeek = weekdayOf(dateStr) === HF_REPORT_WEEKDAY;
   console.log(
-    `[${now.toISOString()}] Starting digest | provider: ${providerName} | HF weekly: ${isHfWeek ? "yes" : "no"}`,
+    `[${now.toISOString()}] Starting digest | provider: ${providerName} | model: ${modelName} | HF weekly: ${isHfWeek ? "yes" : "no"}`,
   );
 
   // 1. Fetch all data in parallel
