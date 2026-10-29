@@ -26,9 +26,10 @@ const provider: LlmProvider = createProvider();
 // Concurrency limiter — prevents rate-limit (429) errors when many LLM calls
 // are fired in parallel. At most LLM_CONCURRENCY requests are in-flight at
 // any given time; the rest queue and run as slots free up.
+// For Gemini Free Tier (15 RPM), LLM_CONCURRENCY = 2 ensures we stay safe.
 // ---------------------------------------------------------------------------
 
-const LLM_CONCURRENCY = 5;
+const LLM_CONCURRENCY = 2;
 let llmSlots = LLM_CONCURRENCY;
 const llmQueue: Array<() => void> = [];
 

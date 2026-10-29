@@ -44,3 +44,4 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PAGES_URL: ${{ secrets.PAGES_URL || 'https://bddt3006-dot.github.io/agents-radar-master' }}
         run: pnpm notify
+
