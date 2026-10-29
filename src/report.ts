@@ -29,7 +29,7 @@ const provider: LlmProvider = createProvider();
 // For Gemini Free Tier (15 RPM), LLM_CONCURRENCY = 2 ensures we stay safe.
 // ---------------------------------------------------------------------------
 
-const LLM_CONCURRENCY = 2;
+const LLM_CONCURRENCY = process.env["LLM_CONCURRENCY"] ? parseInt(process.env["LLM_CONCURRENCY"], 10) : 2;
 let llmSlots = LLM_CONCURRENCY;
 const llmQueue: Array<() => void> = [];
 
@@ -47,6 +47,31 @@ function releaseSlot(): void {
     next();
   } else {
     llmSlots++;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Rate limiter / Pacing
+// Gemini Free Tier enforces a strict 15 RPM (Requests Per Minute) cap.
+// To stay reliably below 15 RPM, we space out calls by at least 5000 ms (~12 RPM).
+// ---------------------------------------------------------------------------
+
+let nextAvailableTime = 0;
+
+export async function paceLlmRequest(): Promise<void> {
+  const minInterval = process.env["LLM_MIN_INTERVAL_MS"]
+    ? parseInt(process.env["LLM_MIN_INTERVAL_MS"], 10)
+    : process.env["VITEST"]
+      ? 0
+      : 5_000;
+  if (minInterval <= 0) return;
+
+  const now = Date.now();
+  const scheduledTime = Math.max(now, nextAvailableTime);
+  nextAvailableTime = scheduledTime + minInterval;
+  const delay = scheduledTime - now;
+  if (delay > 0) {
+    await sleep(delay);
   }
 }
 
@@ -76,6 +101,7 @@ export function llmFailureRatio(): number {
 export function resetLlmStats(): void {
   llmStats.attempted = 0;
   llmStats.failed = 0;
+  nextAvailableTime = 0;
 }
 
 /**
@@ -189,14 +215,19 @@ export function isConnectionError(err: unknown): boolean {
   return false;
 }
 
+export function is503(err: unknown): boolean {
+  return (err as { status?: number })?.status === 503 || String(err).includes("503");
+}
+
 /**
- * Retry rate limits and connection failures; let everything else through.
+ * Retry rate limits, service unavailable (503), and connection failures;
+ * let everything else through.
  *
  * A 4xx that is not 429 will fail identically on the next attempt, and retrying
- * a 5xx risks a duplicate generation that already billed.
+ * a 500 risks a duplicate generation that already billed.
  */
 export function isRetryable(err: unknown): boolean {
-  return is429(err) || isConnectionError(err);
+  return is429(err) || is503(err) || isConnectionError(err);
 }
 
 export async function callLlm(prompt: string, maxTokens = LLM_TOKENS_DEFAULT): Promise<string> {
@@ -205,16 +236,21 @@ export async function callLlm(prompt: string, maxTokens = LLM_TOKENS_DEFAULT): P
     await acquireSlot();
     let released = false;
     try {
+      await paceLlmRequest();
       return await provider.call(prompt, maxTokens);
     } catch (err) {
       const rateLimited = is429(err);
+      const unavailable = is503(err);
       const maxRetries = rateLimited ? MAX_RETRIES_429 : MAX_RETRIES_CONNECTION;
       if (attempt < maxRetries && isRetryable(err)) {
         releaseSlot();
         released = true;
         const wait = Math.min(RETRY_BASE_MS * 2 ** attempt, RETRY_MAX_MS);
-        const reason = rateLimited ? "429" : "connection error";
+        const reason = rateLimited ? "429" : unavailable ? "503" : "connection error";
         console.error(`[llm] ${reason} — retry ${attempt + 1}/${maxRetries} in ${wait / 1000}s...`);
+        if (!process.env["VITEST"]) {
+          nextAvailableTime = Math.max(nextAvailableTime, Date.now() + wait);
+        }
         await sleep(wait);
         continue;
       }
