@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "OpenAI Codex phát hành rust-v0.167.0-alpha.3",
+      "Gemini CLI đẩy bản cập nhật v0.67.0-nightly",
+      "Công cụ CLI chuyển hướng sang vòng lặp tác nhân tự động",
+      "Kỹ sư tăng cường bảo vệ công cụ chống sự cố thời gian chạy",
+      "Nhu cầu doanh nghiệp thúc đẩy bảo mật thông tin đăng nhập",
+      "Đã vá lỗi chênh lệch đường dẫn đa nền tảng"
+    ],
+    "ai-agents": [
+      "OpenClaw ghi nhận 500 sự cố và PR đang hoạt động",
+      "Đã đẩy bản sửa lỗi khôi phục trạng thái Windows",
+      "Cải thiện việc cô lập công cụ tác nhân phụ",
+      "Đã hợp nhất các bản vá hồi quy định tuyến kênh",
+      "Đã thêm tính năng khôi phục chủ sở hữu workspace ngoại tuyến",
+      "Đã sửa lỗi truy vấn công cụ danh mục Code Mode"
+    ],
+    "ai-infra": [
+      "llama.cpp triển khai cập nhật b12027-b12032",
+      "vLLM hướng tới hỗ trợ DeepSeek-V4.1 và GLM-5",
+      "SGLang mang đến các tối ưu hóa phần cứng Blackwell",
+      "Ollama thêm ngân sách bộ nhớ đệm prompt cho mỗi mô hình",
+      "Kỹ sư xây dựng hỗ trợ Blackwell SM120",
+      "Các công cụ suy luận phân tách bộ nhớ đệm KV"
+    ],
+    "ai-trending": [
+      "Hugging Face transformers đạt 168k sao",
+      "LangChain đạt 148k sao trên GitHub",
+      "Ollama bứt phá lên tổng số 185k sao",
+      "Khung Rig thu hút được sự chú ý trong Rust",
+      "Lập trình viên chuyển hướng sang ngữ cảnh bền vững",
+      "Xu hướng vận hành bảo mật cục bộ không cần API-key"
+    ],
+    "ai-web": [
+      "Các mô hình của Anthropic tự động hóa chuỗi tấn công mạng",
+      "Anthropic ra mắt nền tảng Managed Agents",
+      "OpenAI cập nhật Đặc tả mô hình và nguyên tắc hướng dẫn",
+      "Anthropic mở rộng các khoản tài trợ khu vực công",
+      "OpenAI hướng tới các biện pháp kiểm soát an toàn cho thanh thiếu niên",
+      "Chính sách bản quyền của nhà xuất bản web được cập nhật"
+    ],
+    "ai-hn": [
+      "Phát hành trọng số mở Mistral Large 4",
+      "Google phát hành mô hình Gemini 4 Carbon",
+      "Bài đăng của Mistral thu hút 1.,716 lượt upvote",
+      "Gemini 4 Carbon thu hút 802 bình luận",
+      "Cộng đồng tranh luận về các chi phí AI ẩn",
+      "Thảo luận về cửa hậu Claude Code VSX"
+    ],
+    "ai-hf": [
+      "Qwen/Qwen3.8-27B đạt 7.8M lượt tải xuống",
+      "LiquidAI phát hành LFM3-1.7B hiệu quả",
+      "Nanbeige4.3-33B thu hút sự chú ý về khả năng suy luận",
+      "Lightricks phát hành mô hình video LTX-2.5",
+      "Meta sam3 đạt khối lượng tải xuống khổng lồ",
+      "Mô hình đa phương thức thống trị bảng xếp hạng"
+    ],
+    "ai-community": [
+      "Làm nổi bật rủi ro bảo mật tiêm nhiễm prompt",
+      "AI viết 75% mã nguồn mới của Google",
+      "46% lập trình viên không tin tưởng đầu ra mã của AI",
+      "Thảo luận về nhóm sử dụng chung của OpenAI",
+      "Khám phá các lớp thực thi tất định",
+      "Nghiên cứu về việc rò rỉ dữ liệu qua các tệp"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "OpenAI Codex drops rust-v0.167.0-alpha.3",
+      "Gemini CLI pushes v0.67.0-nightly update",
+      "CLI tools pivot to autonomous agent loops",
+      "Engineers harden tools against runtime crashes",
+      "Enterprise demand drives credential security",
+      "Cross-platform path discrepancies patched"
+    ],
+    "ai-agents": [
+      "OpenClaw logs 500 active issues and PRs",
+      "Windows state recovery fixes pushed",
+      "Subagent tool isolation improved",
+      "Channel routing regression patches merged",
+      "Offline workspace owner recovery added",
+      "Code Mode catalog tool queries fixed"
+    ],
+    "ai-infra": [
+      "llama.cpp rolls out b12027-b12032 updates",
+      "vLLM targets DeepSeek-V4.1 and GLM-5 support",
+      "SGLang brings Blackwell hardware optims",
+      "Ollama adds per-model prompt cache budgets",
+      "Engineers build Blackwell SM120 support",
+      "Inference engines disaggregate KV-caches"
+    ],
+    "ai-trending": [
+      "Hugging Face transformers hits 168k stars",
+      "LangChain reaches 148k GitHub stars",
+      "Ollama surges to 185k total stars",
+      "Rig framework gains traction in Rust",
+      "Developers pivot to persistent context",
+      "Zero-API-key local security ops trend"
+    ],
+    "ai-web": [
+      "Anthropic models automate cyberattack chains",
+      "Anthropic launches Managed Agents platform",
+      "OpenAI updates Model Spec and guidelines",
+      "Anthropic expands public sector grants",
+      "OpenAI targets youth safety controls",
+      "Web-publisher copyright policies updated"
+    ],
+    "ai-hn": [
+      "Mistral Large 4 open weights released",
+      "Google drops Gemini 4 Carbon model",
+      "Mistral post triggers 1,716 upvotes",
+      "Gemini 4 Carbon draws 802 comments",
+      "Community debates hidden AI costs",
+      "Claude Code VSX backdoor discussed"
+    ],
+    "ai-hf": [
+      "Qwen/Qwen3.8-27B hits 7.8M downloads",
+      "LiquidAI drops efficient LFM3-1.7B",
+      "Nanbeige4.3-33B gains reasoning traction",
+      "Lightricks releases LTX-2.5 video model",
+      "Meta sam3 pulls massive download volume",
+      "Multimodal models dominate leaderboard"
+    ],
+    "ai-community": [
+      "Prompt injection security risks highlighted",
+      "AI writes 75% of new Google code",
+      "46% of devs distrust AI code output",
+      "OpenAI shared usage pools discussed",
+      "Deterministic execution layers explored",
+      "Data exfiltration via files studied"
+    ]
+  }
+}
